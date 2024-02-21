@@ -20,9 +20,9 @@ const ChatSideBar = ({chats, chatId, isPro }: Props) => {
     const [loading, setLoading] = React.useState(false);
 
   return (
-    <div className='w-full h-screen p-4 text-gray-200 bg-gray-900'>
+    <div className='w-full h-screen p-4 text-gray-200 bg-cyan-950 overflow-hidden'>
         <Link href="/">
-            <Button className='w-full border-dashed border-white border'>
+            <Button className='w-full border-dashed border-white border bg-cyan-900'>
                 <PlusCircle className="mr-2 w-4 h-4" />
                     New Chat
             </Button>
@@ -33,7 +33,7 @@ const ChatSideBar = ({chats, chatId, isPro }: Props) => {
                 <Link key={chat.id} href={`/chat/${chat.id}`}>
                     <div className={
                         cn('rounded-lg p-3 text-slate-300 flex items-center', {
-                            'bg-blue-600 text-white': chat.id === chatId,
+                            'bg-cyan-600 text-white': chat.id === chatId,
                             'hover:text-white': chat.id !== chatId
                         })
                     }>
@@ -47,9 +47,9 @@ const ChatSideBar = ({chats, chatId, isPro }: Props) => {
             ))}
         </div>
         <div className="absolute bottom-4 left-4">
-            <div className='flex items-center gap-2 text-sm text-slate-500 flex-wrap'>
+            <div className='flex mb-4 items-center gap-2 text-sm text-slate-500 flex-wrap'>
                 <Link href='/'>Home</Link>
-                <Link href='/'>Source</Link>
+                <Link href='https://paolobang.vercel.app/'>Contact</Link>
             </div>
             <SubscriptionButton isPro={isPro} />
         </div>
